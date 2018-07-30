@@ -11,8 +11,8 @@ class App extends Component {
                     <h1 className="App-title">Mooderator</h1>
                 </header>
                 <Question/>
-                <FancyButton/>
-                <FancyButton/>
+                <FancyButton label={"OK"}/>
+                <FancyButton label={"NO"}/>
             </div>
         );
     }
