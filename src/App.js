@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import Question from "./components/Question";
-import FancyButton from "./components/FancyButton";
+import SurveyDashboard from "./components/SurveyDashboard";
 
 class App extends Component {
     render() {
@@ -10,9 +9,7 @@ class App extends Component {
                 <header className="App-header">
                     <h1 className="App-title">Mooderator</h1>
                 </header>
-                <Question/>
-                <FancyButton label={"OK"}/>
-                <FancyButton label={"NO"}/>
+                <SurveyDashboard />
             </div>
         );
     }
