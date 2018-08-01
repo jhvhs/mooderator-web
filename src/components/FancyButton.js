@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 class FancyButton extends Component {
@@ -12,7 +12,7 @@ class FancyButton extends Component {
 }
 
 FancyButton.propTypes = {
-    label:PropTypes.string.isRequired
+    label: PropTypes.string.isRequired
 };
 
 export default FancyButton;

@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import Question from './Question';
 
 it('renders without crashing', () => {
-    const wrapper = shallow(<Question />);
-    const welcome = <h1>is this a question?</h1>;
-    expect(wrapper.contains(welcome)).toEqual(true);
+    const wrapper = shallow(<Question value={"is this a silly question?"}/>);
+    const content = <h1>is this a silly question?</h1>;
+    expect(wrapper.contains(content)).toEqual(true);
 });
