@@ -3,6 +3,7 @@ import './App.css';
 import {Provider} from 'react-redux';
 import SurveyDashboard from "./components/SurveyDashboard";
 import configureStore from './store/index'
+import banner from './banner.png';
 
 
 const store = configureStore();
@@ -13,7 +14,7 @@ class App extends Component {
             <Provider store={store}>
                 <div className="App">
                     <header className="App-header">
-                        <h1 className="App-title">Mooderator</h1>
+                        <img src={banner} alt="Mooderator"/>
                     </header>
                     <SurveyDashboard/>
                 </div>
