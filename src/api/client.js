@@ -1,7 +1,5 @@
 function fetchData() {
-    return fetch('http://localhost:8080/questions?latest').then((result) => {
-        return result.json();
-    });
+    return fetch(`${process.env.REACT_APP_API_BASE_URL}/questions/latest`)
 }
 
 export default fetchData;

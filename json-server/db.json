@@ -2,7 +2,7 @@
   "questions": [
     {
       "id" : 1,
-      "question": "is this a silly question coming from the api?"
+      "sentence": "is this a silly question coming from the api?"
     }
   ]
 }

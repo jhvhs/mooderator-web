@@ -18,7 +18,7 @@ export class SurveyDashboard extends Component {
     render() {
         return (
             <div className="survey-dashboard">
-                <Question value={this.props.question ? this.props.question.question : "Loading....."}/>
+                <Question value={this.props.question ? this.props.question.sentence : "Loading....."}/>
                 <FancyButton label={'OK'}/>
                 <FancyButton label={'NO'}/>
             </div>

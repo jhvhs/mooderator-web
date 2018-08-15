@@ -8,7 +8,7 @@ describe('SurveyDashBoard component', () => {
 
     it('renders without crashing', () => {
         const mockDispatch = jest.fn();
-        const question = {question: "is this a silly question?"};
+        const question = {sentence: "is this a silly question?"};
 
         const wrapper = shallow(<SurveyDashboard question={question} dispatch={mockDispatch}/>);
 
