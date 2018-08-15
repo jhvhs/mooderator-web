@@ -1,0 +1,6 @@
+---
+applications:
+- name: mooderator-web
+  path: ./build
+  memory: 512M
+  buildpack: staticfile_buildpack
