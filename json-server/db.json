@@ -1,8 +1,18 @@
 {
   "questions": [
     {
-      "id" : 1,
-      "sentence": "is this a silly question coming from the api?"
+      "id": 1,
+      "sentence": "is this a question?",
+      "answers": [
+        {
+          "id": 1,
+          "value": "yes"
+        },
+        {
+          "id": 2,
+          "value": "no"
+        }
+      ]
     }
   ]
 }

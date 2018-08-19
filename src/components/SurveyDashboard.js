@@ -16,11 +16,19 @@ export class SurveyDashboard extends Component {
     }
 
     render() {
+        let buttons = [];
+
+        if (this.props.question) {
+            this.props.question.answers.forEach((answer)=>{
+               buttons.push(<FancyButton label={answer.value}/>)
+            });
+        }
+
         return (
             <div className="survey-dashboard">
                 <Question value={this.props.question ? this.props.question.sentence : "Loading....."}/>
-                <FancyButton label={'OK'}/>
-                <FancyButton label={'NO'}/>
+
+                {buttons}
             </div>
         );
     }
