@@ -1,1 +1,2 @@
 export const ADD_QUESTION = "ADD_QUESTION";
+export const SUBMITTER_RESULT = "SUBMITTER_RESULT";
