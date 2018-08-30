@@ -26,9 +26,13 @@ export class SurveyDashboard extends Component {
         }) : [];
 
         return (
-            <div className="survey-dashboard">
-                <Question value={this.props.question ? this.props.question.sentence : "Loading....."}/>
-                {buttons}
+            <div className="SurveyDashboard">
+                <div className="question-wrapper">
+                    <Question value={this.props.question ? this.props.question.sentence : "Loading....."}/>
+                </div>
+                <div className="buttons">
+                    {buttons}
+                </div>
             </div>
         );
     }

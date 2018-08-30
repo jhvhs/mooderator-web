@@ -1,5 +1,6 @@
 export function fetchData() {
-    return fetch(`${process.env.REACT_APP_API_BASE_URL}/questions/latest`)
+    console.log(`${process.env.REACT_APP_API_BASE_URL}/questions/latest`);
+    return fetch(`${process.env.REACT_APP_API_BASE_URL}/questions/latest`);
 }
 
 export function sendResult(result) {
