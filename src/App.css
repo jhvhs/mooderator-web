@@ -42,7 +42,7 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 2px;
+    bottom: 40px;
 }
 
 .SurveyDashboard > .question-wrapper {
@@ -53,8 +53,6 @@ body {
 .FancyButton {
     background-color: #fefefe;
     border-radius: 5px;
-    /*padding: .8rem;*/
-    /*margin: .3rem 0;*/
     float: left;
     display: flex;
     align-items: center;

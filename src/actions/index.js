@@ -1,8 +1,10 @@
-import {ADD_QUESTION, SUBMITTER_RESULT} from '../constants/action-types.js';
+import {ADD_QUESTION, SUBMITTED_RESULT} from '../constants/action-types.js';
 import {fetchData, sendResult} from "../api/client";
+import {CLOSE_MESSAGE} from "../constants/action-types";
 
 export const addQuestion = question => ({ type: ADD_QUESTION, payload: question });
-export const submittedResult = result => ({ type: SUBMITTER_RESULT, payload: result });
+export const submittedResult = result => ({ type: SUBMITTED_RESULT, payload: result });
+export const closeMessage = result => ({ type: CLOSE_MESSAGE, payload: result });
 
 export function fetchQuestion() {
     return (dispatch) => {
@@ -28,6 +30,10 @@ export function submitResult(result) {
             })
             .catch(error => console.error(error));
     };
+}
+
+export function close() {
+    return (dispatch) => (dispatch(closeMessage()));
 }
 
 function handleErrors(response) {
