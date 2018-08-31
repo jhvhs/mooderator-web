@@ -20,7 +20,8 @@ export class SurveyDashboard extends Component {
             const result = {
                 questionId: this.props.question.id,
                 question: this.props.question.sentence,
-                answer: answer.value
+                answer: answer.value,
+                answerId: answer.id
             };
             return <FancyButton label={answer.value} key={`answer-${index}`} onClick={this.send.bind(this, result)}/>;
         }) : [];
