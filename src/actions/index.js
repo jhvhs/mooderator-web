@@ -10,7 +10,7 @@ export function fetchQuestion() {
             .then(handleErrors)
             .then(res => res.json())
             .then(data => {
-                dispatch(addQuestion(data));
+                dispatch(addQuestion(data[0]));
                 return data;
             })
             .catch(error => console.error(error));
