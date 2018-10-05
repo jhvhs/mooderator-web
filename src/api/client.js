@@ -1,5 +1,5 @@
 export function fetchData() {
-    return fetch(`${process.env.REACT_APP_API_BASE_URL}/questions`)
+    return fetch(`${process.env.REACT_APP_API_BASE_URL}/questions`);
 }
 
 export function sendResult(result) {

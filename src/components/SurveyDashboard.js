@@ -1,15 +1,24 @@
 import React, {Component} from 'react';
 import Question from './Question';
 import FancyButton from './FancyButton';
+import Thank from './Thank';
 import {connect} from 'react-redux';
-import {fetchQuestion, submitResult} from "../actions";
+import {fetchQuestion, submitResult, close} from "../actions";
 
 const mapStateToProps = state => {
-    return {question: state.question};
+    return {
+        question: state.question,
+        hasDataSent: state.hasDataSent
+    };
 };
 
-
 export class SurveyDashboard extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.closeThanksPanel = this.closeThanksPanel.bind(this);
+    }
 
     componentDidMount() {
         this.props.dispatch(fetchQuestion());
@@ -20,21 +29,32 @@ export class SurveyDashboard extends Component {
             const result = {
                 questionId: this.props.question.id,
                 question: this.props.question.sentence,
-                answer: answer.value
+                answer: answer.value,
+                answerId: answer.id
             };
             return <FancyButton label={answer.value} key={`answer-${index}`} onClick={this.send.bind(this, result)}/>;
         }) : [];
 
+        const thanks = <div><Thank close={this.closeThanksPanel}/></div>;
+
         return (
-            <div className="survey-dashboard">
-                <Question value={this.props.question ? this.props.question.sentence : "Loading....."}/>
-                {buttons}
+            <div className="SurveyDashboard">
+                <div className="question-wrapper">
+                    <Question value={this.props.question ? this.props.question.sentence : "Loading....."}/>
+                </div>
+                <div className="buttons">
+                    {this.props.hasDataSent ? thanks : buttons}
+                </div>
             </div>
         );
     }
 
     send(result) {
         this.props.dispatch(submitResult(result));
+    }
+
+    closeThanksPanel() {
+        this.props.dispatch(close());
     }
 }
 

@@ -1,28 +1,68 @@
+body {
+    font-family: Karla, Roboto, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgb(10, 10, 10);
+}
+
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+    animation: App-logo-spin infinite 1s linear;
+    height: 80px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+    background-color: #222;
+    height: 60px;
 }
 
 .App-title {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .App-intro {
-  font-size: large;
+    font-size: large;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.SurveyDashboard > .buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 40px;
+}
+
+.SurveyDashboard > .question-wrapper {
+    margin-top: auto;
+    font-size: 40px;
+}
+
+.FancyButton {
+    background-color: #fefefe;
+    border-radius: 5px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.FancyButton > button {
+    width: 70%;
+    height: 100px;
+    float: left;
+    font-size: 40px;
 }
