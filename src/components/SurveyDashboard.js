@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Question from './Question';
 import FancyButton from './FancyButton';
 import Thank from './Thank';
+import Chart from './Chart';
 import {connect} from 'react-redux';
 import {fetchQuestion, submitResult, close} from "../actions";
 
@@ -39,12 +40,17 @@ export class SurveyDashboard extends Component {
 
         return (
             <div className="SurveyDashboard">
+                <Chart></Chart>
+
+
+
                 <div className="question-wrapper">
                     <Question value={this.props.question ? this.props.question.sentence : "Loading....."}/>
                 </div>
                 <div className="buttons">
                     {this.props.hasDataSent ? thanks : buttons}
                 </div>
+
             </div>
         );
     }
