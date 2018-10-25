@@ -637,6 +637,8 @@ class Chart extends Component {
             })
         });
 
+        const colors = ["green", "red", "yellow"];
+
         return (
             <div className="Chart">
                 <p>{data02[0].question}</p>
@@ -647,8 +649,8 @@ class Chart extends Component {
                         <YAxis/>
                         <Tooltip/>
 
-                        {series.map(s => (
-                            <Line dataKey="count" data={s.data} name={s.name} key={s.name}/>
+                        {series.map((s,index) => (
+                            <Line dataKey="count" data={s.data} name={s.name} key={s.name} stroke={colors[index]} />
                         ))}
 
                     </LineChart>
