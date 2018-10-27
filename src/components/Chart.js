@@ -637,7 +637,7 @@ class Chart extends Component {
             })
         });
 
-        const colors = ["green", "red", "yellow"];
+        const colors = ["#8884d8", "#82ca9d", "yellow"];
 
         return (
             <div className="Chart">
@@ -650,7 +650,7 @@ class Chart extends Component {
                         <Tooltip/>
 
                         {series.map((s,index) => (
-                            <Line dataKey="count" data={s.data} name={s.name} key={s.name} stroke={colors[index]} />
+                            <Line type="monotone" dataKey="count" data={s.data} name={s.name} key={s.name} stroke={colors[index]} activeDot={{r: 4}}/>
                         ))}
 
                     </LineChart>
