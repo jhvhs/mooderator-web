@@ -1,3 +1,4 @@
 export const ADD_QUESTION = "ADD_QUESTION";
 export const SUBMITTED_RESULT = "SUBMITTED_RESULT";
 export const CLOSE_MESSAGE = "CLOSE_MESSAGE";
+export const DAILY_STATS = "DAILY_STATS";

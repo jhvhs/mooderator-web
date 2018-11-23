@@ -1,5 +1,4 @@
-import {ADD_QUESTION, CLOSE_MESSAGE} from "../constants/action-types";
-import { SUBMITTED_RESULT } from "../constants/action-types";
+import {ADD_QUESTION, CLOSE_MESSAGE, SUBMITTED_RESULT, DAILY_STATS} from "../constants/action-types";
 
 const rootReducer = (state = {}, action) => {
     switch (action.type) {
@@ -8,8 +7,9 @@ const rootReducer = (state = {}, action) => {
         case SUBMITTED_RESULT:
             return Object.assign({}, state, { hasDataSent: true });
         case CLOSE_MESSAGE:
-            console.log(state, action)  ;
             return Object.assign({}, state, { hasDataSent: false });
+        case DAILY_STATS:
+            return Object.assign({}, state, { dailyStats: action.payload });
         default:
             return state;
     }

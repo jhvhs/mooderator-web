@@ -1,10 +1,10 @@
-import {ADD_QUESTION, SUBMITTED_RESULT} from '../constants/action-types.js';
-import {fetchData, sendResult} from "../api/client";
-import {CLOSE_MESSAGE} from "../constants/action-types";
+import {ADD_QUESTION, SUBMITTED_RESULT, CLOSE_MESSAGE, DAILY_STATS} from "../constants/action-types";
+import {fetchData, fetchStats, sendResult} from "../api/client";
 
 export const addQuestion = question => ({ type: ADD_QUESTION, payload: question });
 export const submittedResult = result => ({ type: SUBMITTED_RESULT, payload: result });
 export const closeMessage = result => ({ type: CLOSE_MESSAGE, payload: result });
+export const dailyStats = stats => ({ type: DAILY_STATS, payload: stats });
 
 export function fetchQuestion() {
     return (dispatch) => {
@@ -35,6 +35,20 @@ export function submitResult(result) {
 export function close() {
     return (dispatch) => (dispatch(closeMessage()));
 }
+
+export function fetchDailyStats() {
+    return (dispatch) => {
+        return fetchStats()
+            .then(handleErrors)
+            .then(res => res.json())
+            .then(data => {
+                dispatch(dailyStats(data));
+                return data;
+            })
+            .catch(error => console.error(error));
+    };
+}
+
 
 function handleErrors(response) {
     if (!response.ok) {
