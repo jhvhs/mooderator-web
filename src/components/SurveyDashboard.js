@@ -2,15 +2,13 @@ import React, {Component} from 'react';
 import Question from './Question';
 import FancyButton from './FancyButton';
 import Thank from './Thank';
-import Chart from './Chart';
 import {connect} from 'react-redux';
-import {fetchQuestion, fetchDailyStats, submitResult, close} from "../actions";
+import {close, fetchQuestion, submitResult} from "../actions";
 
 const mapStateToProps = state => {
     return {
         question: state.question,
         hasDataSent: state.hasDataSent,
-        dailyStats: state.dailyStats
     };
 };
 
@@ -24,7 +22,6 @@ export class SurveyDashboard extends Component {
 
     componentDidMount() {
         this.props.dispatch(fetchQuestion());
-        this.props.dispatch(fetchDailyStats());
     }
 
     render() {
@@ -42,9 +39,6 @@ export class SurveyDashboard extends Component {
 
         return (
             <div className="SurveyDashboard">
-                <Chart dailyStats={this.props.dailyStats}/>
-
-
                 <div className="question-wrapper">
                     <Question value={this.props.question ? this.props.question.sentence : "Loading....."}/>
                 </div>
