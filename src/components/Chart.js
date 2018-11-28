@@ -9,7 +9,11 @@ class Chart extends Component {
         const data = this.props.dailyStats;
         const series = this.groupData(data);
 
-        const colors = ["#8884d8", "#82ca9d", "yellow"];
+
+        const SO_SO = "yellow";
+        const BAD = "red";
+        const GOOD = "green";
+        const colors = [GOOD, BAD, SO_SO];
 
         return (
             <div className="Chart">
