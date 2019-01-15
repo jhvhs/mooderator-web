@@ -19,7 +19,7 @@ class Chart extends Component {
                 <p>{data ? data[0].question : ''}</p>
                 {series.map((s, index) => (
                     <div key={`chart-${index}-`} className='line-chart-wrapper'>
-                    <LineChart width={700} height={250} margin={{top: 5, right: 20, left: 20, bottom: 5}}>
+                        <LineChart width={700} height={250} margin={{top: 5, right: 20, left: 20, bottom: 5}}>
                             <CartesianGrid strokeDasharray="3 3"/>
                             <XAxis dataKey="day" type={"category"} padding={{left: 30, right: 30}}
                                    allowDuplicatedCategory={true}/>
