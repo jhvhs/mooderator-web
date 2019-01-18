@@ -1,0 +1,22 @@
+// If you want to override variables do it here
+@import "variables";
+
+// Import styles
+@import "~@coreui/coreui/scss/coreui.scss";
+
+// Temp fix for reactstrap
+@import '~@coreui/coreui/scss/_dropdown-menu-right.scss';
+
+// If you want to add something do it here
+@import "custom";
+
+// ie fixes
+@import "ie-fix";
+
+// --- old css classes to be cleaned up --
+body {
+  font-family: Karla, Roboto, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgb(10, 10, 10);
+}

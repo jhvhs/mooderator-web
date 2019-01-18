@@ -38,12 +38,30 @@ export class SurveyDashboard extends Component {
         const thanks = <div><Thank close={this.closeThanksPanel}/></div>;
 
         return (
-            <div className="SurveyDashboard">
-                <div className="question-wrapper">
-                    <Question value={this.props.question ? this.props.question.sentence : "Loading....."}/>
+            <div className="container">
+                <div className="row">
+                    &nbsp;
                 </div>
-                <div className="buttons">
-                    {this.props.hasDataSent ? thanks : buttons}
+                <div className="row">
+                    &nbsp;
+                </div>
+                <div className="row">
+                    <div className="row col-12">
+                        <div className="col-12 text-center">
+                            <Question value={this.props.question ? this.props.question.sentence : "Loading....."}/>
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                    &nbsp;
+                </div>
+                <div className="row">
+                    &nbsp;
+                </div>
+                <div className="row">
+                    <div className="row col-12 text-center">
+                        {this.props.hasDataSent ? thanks : buttons}
+                    </div>
                 </div>
 
             </div>
