@@ -21,7 +21,7 @@ export class SurveyDashboard extends Component {
     }
 
     componentDidMount() {
-        this.props.dispatch(fetchQuestion());
+        setInterval(() => this.props.dispatch(fetchQuestion()), 30 * 60 * 1000);
     }
 
     render() {
