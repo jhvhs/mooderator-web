@@ -4,9 +4,12 @@ import PropTypes from 'prop-types';
 class Question extends Component {
     render() {
         return (
-            <div className="question">
-                <h1>{this.props.value}</h1>
+            <div className="text-center">
+                <div className="card-body">
+                    <span className={"display-2"}>{this.props.value}</span>
+                </div>
             </div>
+
         );
     }
 }
