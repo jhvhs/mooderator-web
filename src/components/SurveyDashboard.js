@@ -21,7 +21,13 @@ export class SurveyDashboard extends Component {
     }
 
     componentDidMount() {
-        setInterval(() => this.props.dispatch(fetchQuestion()), 30 * 60 * 1000);
+        this.fetchQuestion();
+        setInterval(() => this.fetchQuestion(), 30 * 60 * 1000);
+    }
+
+    fetchQuestion() {
+        console.log('IN <<<<<<<<<<<<<<<<<<');
+        this.props.dispatch(fetchQuestion());
     }
 
     render() {
