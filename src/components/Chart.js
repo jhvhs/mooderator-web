@@ -11,42 +11,45 @@ class Chart extends Component {
     render() {
         const data = this.props.dailyStats;
         const series = this.groupData(data);
-
         const colors = [GOOD, BAD, SO_SO];
 
         return (
             <div className="Chart">
-                <p>{data ? data[0].question : ''}</p>
-                {series.map((s, index) => (
-                    <div key={`chart-${index}-`} className='line-chart-wrapper'>
-                        <LineChart width={700} height={250} margin={{top: 5, right: 20, left: 20, bottom: 5}}>
-                            <CartesianGrid strokeDasharray="3 3"/>
-                            <XAxis dataKey="day" type={"category"} padding={{left: 30, right: 30}}
-                                   allowDuplicatedCategory={true}/>
-                            <YAxis/>
-                            <Tooltip/>
-                            <Legend/>
-
-                            <Line dataKey="results"
-                                  data={s.data}
-                                  name={s.name}
-                                  key={s.name}
-                                  stroke={colors[index]}
-                                  activeDot={{r: 3}}/>
-
-                        </LineChart>
-                        <br/>
-                        <br/>
-                    </div>
-                ))}
+                <p>{data && data.length > 0 ? data[0].question : ''}</p>
+                {
+                    data && data.length > 0 ? this.drawCharts(series, colors) : 'No stats collected'
+                }
             </div>
         );
     }
 
+    drawCharts(series, colors) {
+        return series.map((s, index) => (
+            <div key={`chart-${index}-`} className='line-chart-wrapper'>
+                <LineChart width={700} height={250} margin={{top: 5, right: 20, left: 20, bottom: 5}}>
+                    <CartesianGrid strokeDasharray="3 3"/>
+                    <XAxis dataKey="day" type={"category"} padding={{left: 30, right: 30}}
+                           allowDuplicatedCategory={true}/>
+                    <YAxis/>
+                    <Tooltip/>
+                    <Legend/>
+
+                    <Line dataKey="results"
+                          data={s.data}
+                          name={s.name}
+                          key={s.name}
+                          stroke={colors[index]}
+                          activeDot={{r: 3}}/>
+
+                </LineChart>
+                <br/>
+                <br/>
+            </div>
+        ));
+    }
+
     groupData(data) {
         const groupedData = _.mapValues(_.groupBy(data, q => q.answer));
-
-
         const series = [];
         Object.keys(groupedData).forEach((group) => {
             series.push({
@@ -54,9 +57,7 @@ class Chart extends Component {
                 data: groupedData[group]
             });
         });
-
         return series
-        // return _.sortBy(series, (serie)=> serie.data.length, ['asc']);
     }
 }
 

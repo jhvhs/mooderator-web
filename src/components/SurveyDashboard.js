@@ -26,7 +26,6 @@ export class SurveyDashboard extends Component {
     }
 
     fetchQuestion() {
-        console.log('IN <<<<<<<<<<<<<<<<<<');
         this.props.dispatch(fetchQuestion());
     }
 
