@@ -36,9 +36,9 @@ export function close() {
     return (dispatch) => (dispatch(closeMessage()));
 }
 
-export function fetchDailyStats() {
+export function fetchDailyStats(questionId) {
     return (dispatch) => {
-        return fetchStats()
+        return fetchStats(questionId)
             .then(handleErrors)
             .then(res => res.json())
             .then(data => {

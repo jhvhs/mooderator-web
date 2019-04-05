@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Chart from './Chart';
 import {connect} from 'react-redux';
+import queryString from 'query-string'
 import {fetchDailyStats} from "../actions";
 
 const mapStateToProps = state => {
@@ -12,7 +13,9 @@ const mapStateToProps = state => {
 export class ChartDashboard extends Component {
 
     componentDidMount() {
-        this.props.dispatch(fetchDailyStats());
+        const values = queryString.parse(this.props.location.search);
+        const questionId = values.questionId ? values.questionId : 'latest';
+        this.props.dispatch(fetchDailyStats(questionId));
     }
 
     render() {
