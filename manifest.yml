@@ -4,3 +4,5 @@ applications:
   path: ./build
   memory: 512M
   buildpack: staticfile_buildpack
+  routes:
+  - route: dublin-mooderator.cfapps.io
